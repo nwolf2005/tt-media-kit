@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travels & Traditions — Media Kit 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&family=Noto+Serif+Display:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --navy: #0a1628;
+  --navy-mid: #132240;
+  --navy-light: #1a2d4d;
+  --navy-card: #0e1c33;
+  --gold: #c9a84c;
+  --gold-light: #dfc06a;
+  --gold-pale: #f0e2b5;
+  --gold-dim: rgba(201, 168, 76, 0.15);
+  --cream: #f5f0e8;
+  --cream-dark: #e8dfd0;
+  --white: #fefcf8;
+  --text-dark: #1a1a1a;
+  --text-mid: #4a4a4a;
+  --text-light: #8a8a7e;
+}
+
+html { scroll-behavior: smooth; overflow-x: hidden; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-dark);
+  background: var(--cream);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.section-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1rem;
+  display: flex; align-items: center; gap: 1rem;
+}
+.section-label::before {
+  content: ''; width: 40px; height: 1px; background: var(--gold);
+}
+
+.rv {
+  opacity: 0; transform: translateY(40px);
+  transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);
+}
+.rv.vis { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: 0.1s; }
+.d2 { transition-delay: 0.2s; }
+.d3 { transition-delay: 0.3s; }
+.d4 { transition-delay: 0.4s; }
+.d5 { transition-delay: 0.5s; }
+
+/* NAV */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1.5rem 3rem;
+  display: flex; justify-content: space-between; align-items: center;
+  transition: all 0.5s ease;
+}
+.nav.scrolled {
+  background: rgba(10,22,40,0.95); backdrop-filter: blur(20px);
+  padding: 1rem 3rem; box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem; font-weight: 600; color: var(--gold);
+  letter-spacing: 0.15em; text-transform: uppercase;
+}
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: rgba(255,255,255,0.8); text-decoration: none;
+  transition: color 0.3s; position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 1px; background: var(--gold); transition: width 0.3s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-links a:hover::after { width: 100%; }
+
+/* HERO */
+.hero {
+  position: relative; height: 100vh; min-height: 700px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--navy); overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(201,168,76,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(19,34,64,0.9) 0%, var(--navy) 70%);
+}
+.hero-pattern {
+  position: absolute; inset: 0; opacity: 0.03;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(201,168,76,0.5) 60px, rgba(201,168,76,0.5) 61px),
+    repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(201,168,76,0.5) 60px, rgba(201,168,76,0.5) 61px);
+}
+.hero-compass {
+  position: absolute; width: 500px; height: 500px;
+  border: 1px solid rgba(201,168,76,0.07); border-radius: 50%;
+  top: 50%; left: 50%; transform: translate(-50%,-50%);
+  animation: spin 120s linear infinite;
+}
+.hero-compass::before {
+  content: ''; position: absolute; width: 700px; height: 700px;
+  border: 1px solid rgba(201,168,76,0.04); border-radius: 50%;
+  top: 50%; left: 50%; transform: translate(-50%,-50%);
+}
+.hero-compass::after {
+  content: ''; position: absolute; width: 300px; height: 300px;
+  border: 1px solid rgba(201,168,76,0.1); border-radius: 50%;
+  top: 50%; left: 50%; transform: translate(-50%,-50%);
+}
+@keyframes spin { to { transform: translate(-50%,-50%) rotate(360deg); } }
+.hero-cross {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%); width: 900px; height: 900px;
+}
+.hero-cross::before, .hero-cross::after {
+  content: ''; position: absolute; background: rgba(201,168,76,0.05);
+}
+.hero-cross::before { width: 1px; height: 100%; left: 50%; }
+.hero-cross::after { width: 100%; height: 1px; top: 50%; }
+.hero-content { position: relative; z-index: 2; text-align: center; padding: 0 2rem; }
+.hero-pre {
+  font-size: 0.7rem; font-weight: 500; letter-spacing: 0.5em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 2rem;
+  opacity: 0; animation: fadeUp 1s 0.5s forwards;
+}
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.5rem,8vw,7rem); font-weight: 300;
+  color: var(--white); line-height: 1.05; margin-bottom: 0.3em;
+  opacity: 0; animation: fadeUp 1.2s 0.7s forwards;
+}
+.hero-title em { font-style: italic; color: var(--gold-light); font-weight: 300; }
+.hero-amp {
+  font-family: 'Noto Serif Display', serif;
+  font-style: italic; font-weight: 300; color: var(--gold);
+  font-size: 0.8em; margin: 0 0.05em;
+}
+.hero-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.1rem,2vw,1.4rem); font-weight: 300;
+  color: rgba(255,255,255,0.65); letter-spacing: 0.08em; margin-bottom: 3rem;
+  opacity: 0; animation: fadeUp 1.2s 0.9s forwards;
+}
+.hero-cta {
+  display: inline-flex; align-items: center; gap: 1rem;
+  padding: 1rem 2.5rem; border: 1px solid var(--gold);
+  color: var(--gold); text-decoration: none;
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase;
+  transition: all 0.4s; opacity: 0; animation: fadeUp 1s 1.1s forwards;
+}
+.hero-cta:hover { background: var(--gold); color: var(--navy); }
+.hero-cta svg { width: 16px; height: 16px; transition: transform 0.3s; }
+.hero-cta:hover svg { transform: translateX(4px); }
+.hero-scroll {
+  position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
+  color: rgba(255,255,255,0.45); font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase;
+  opacity: 0; animation: fadeUp 1s 1.5s forwards;
+}
+.hero-scroll-line {
+  width: 1px; height: 50px; background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+@keyframes scrollPulse { 0%,100% { opacity:0.3; } 50% { opacity:1; } }
+
+/* ABOUT */
+.about { padding: 8rem 3rem; max-width: 1200px; margin: 0 auto; }
+.about h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem,4vw,3.2rem); font-weight: 400;
+  line-height: 1.2; color: var(--navy); margin-bottom: 2rem;
+}
+.about h2 em { font-style: italic; color: var(--gold); }
+.about p {
+  font-size: 0.95rem; line-height: 1.9; color: var(--text-mid);
+  margin-bottom: 1.5rem; font-weight: 300; max-width: 800px;
+}
+.about-stats {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 2rem; margin-top: 3rem; padding-top: 3rem;
+  border-top: 1px solid rgba(201,168,76,0.2);
+}
+.about-stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem; font-weight: 600; color: var(--navy); line-height: 1;
+}
+.about-stat-label {
+  font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--text-light); margin-top: 0.5rem; font-weight: 500;
+}
+
+/* DIVIDER */
+.section-divider { display: flex; align-items: center; justify-content: center; gap: 1.5rem; }
+.section-divider-line { width: 80px; height: 1px; background: var(--gold); opacity: 0.3; }
+.section-divider-diamond { width: 8px; height: 8px; border: 1px solid var(--gold); transform: rotate(45deg); opacity: 0.4; }
+
+/* AUDIENCE */
+.audience { background: var(--navy); padding: 8rem 3rem; position: relative; overflow: hidden; }
+.audience::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 0% 100%, rgba(201,168,76,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 100% 0%, rgba(201,168,76,0.04) 0%, transparent 50%);
+}
+.audience-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+.audience h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem,4vw,3.2rem); font-weight: 400; color: var(--white); margin-bottom: 1rem;
+}
+.audience h2 em { font-style: italic; color: var(--gold-light); }
+.audience-sub {
+  font-size: 0.95rem; color: rgba(255,255,255,0.65); font-weight: 300;
+  max-width: 600px; margin-bottom: 4rem; line-height: 1.7;
+}
+.demo-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; margin-bottom: 3rem; }
+.demo-card {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(201,168,76,0.12);
+  padding: 2.5rem 2rem; text-align: center; transition: all 0.4s; position: relative; overflow: hidden;
+}
+.demo-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0; transition: opacity 0.4s;
+}
+.demo-card:hover { background: rgba(255,255,255,0.05); border-color: rgba(201,168,76,0.25); transform: translateY(-4px); }
+.demo-card:hover::before { opacity: 1; }
+.demo-card-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3.5rem; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 0.5rem;
+}
+.demo-card-label {
+  font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55); font-weight: 500;
+}
+.audience-note {
+  font-size: 0.9rem; color: rgba(255,255,255,0.6); font-weight: 300;
+  line-height: 1.8; max-width: 800px; font-style: italic;
+  border-left: 2px solid var(--gold); padding-left: 1.5rem;
+}
+
+/* REACH */
+.reach { padding: 8rem 3rem; max-width: 1200px; margin: 0 auto; }
+.reach h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem,4vw,3.2rem); font-weight: 400; color: var(--navy); margin-bottom: 1rem;
+}
+.reach h2 em { font-style: italic; color: var(--gold); }
+.reach-sub {
+  font-size: 0.95rem; color: var(--text-mid); font-weight: 300;
+  max-width: 600px; margin-bottom: 4rem; line-height: 1.7;
+}
+.reach-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1.5rem; }
+.reach-card {
+  padding: 3rem; border: 1px solid rgba(201,168,76,0.15);
+  background: var(--white); position: relative; transition: all 0.4s;
+}
+.reach-card:hover { box-shadow: 0 20px 60px rgba(10,22,40,0.08); transform: translateY(-2px); }
+.reach-card-icon {
+  width: 48px; height: 48px; border: 1px solid var(--gold); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: var(--gold);
+}
+.reach-card-icon svg { width: 20px; height: 20px; }
+.reach-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem; font-weight: 500; color: var(--navy); margin-bottom: 0.75rem;
+}
+.reach-card p { font-size: 0.85rem; color: var(--text-mid); font-weight: 300; line-height: 1.7; margin-bottom: 1.5rem; }
+.reach-card-stat { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: var(--gold); }
+.reach-card-stat span {
+  font-family: 'Montserrat', sans-serif; font-size: 0.65rem; color: var(--text-light);
+  letter-spacing: 0.15em; text-transform: uppercase; margin-left: 0.5rem; font-weight: 500;
+}
+
+/* OPPORTUNITY */
+.opportunity { background: var(--navy); padding: 8rem 3rem; position: relative; overflow: hidden; }
+.opportunity::before {
+  content: ''; position: absolute; top: -200px; right: -200px;
+  width: 600px; height: 600px; border: 1px solid rgba(201,168,76,0.04); border-radius: 50%;
+}
+.opportunity-inner { max-width: 1200px; margin: 0 auto; position: relative; }
+.opportunity h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem,4vw,3.2rem); font-weight: 400; color: var(--white); margin-bottom: 1rem;
+}
+.opportunity h2 em { font-style: italic; color: var(--gold-light); }
+.quote-box {
+  background: rgba(201,168,76,0.06); border: 1px solid rgba(201,168,76,0.2);
+  padding: 2.5rem 3rem; margin: 2rem 0 4rem; position: relative;
+}
+.quote-box::before {
+  content: '\201C'; font-family: 'Noto Serif Display', serif;
+  font-size: 4rem; color: var(--gold); opacity: 0.3;
+  position: absolute; top: 0.5rem; left: 1.5rem; line-height: 1;
+}
+.quote-box p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem; font-style: italic; font-weight: 300;
+  color: rgba(255,255,255,0.7); line-height: 1.7; padding-left: 1rem;
+}
+.benefits-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+.benefit-card {
+  padding: 2.5rem; border: 1px solid rgba(201,168,76,0.12);
+  background: rgba(255,255,255,0.02); transition: all 0.4s; position: relative;
+}
+.benefit-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 2px; background: var(--gold); transform: scaleX(0); transition: transform 0.4s;
+}
+.benefit-card:hover { background: rgba(255,255,255,0.04); transform: translateY(-4px); }
+.benefit-card:hover::after { transform: scaleX(1); }
+.benefit-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem; font-weight: 300; color: rgba(201,168,76,0.3); margin-bottom: 1.5rem;
+}
+.benefit-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem; font-weight: 500; color: var(--white); margin-bottom: 0.75rem;
+}
+.benefit-card p { font-size: 0.82rem; color: rgba(255,255,255,0.6); font-weight: 300; line-height: 1.7; }
+
+/* PARTNERS */
+.partners { padding: 8rem 3rem; max-width: 1200px; margin: 0 auto; text-align: center; }
+.partners h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem,4vw,3.2rem); font-weight: 400; color: var(--navy); margin-bottom: 1rem;
+}
+.partners h2 em { font-style: italic; color: var(--gold); }
+.partners .section-label { justify-content: center; }
+.partners .section-label::before { display: none; }
+.logos-grid { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 3rem; }
+.logo-card {
+  width: 280px; padding: 2rem 1.5rem;
+  border: 1px solid rgba(201,168,76,0.15); background: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 0.5rem; transition: all 0.4s; position: relative; overflow: hidden;
+}
+.logo-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(201,168,76,0.03), transparent); }
+.logo-card:hover { border-color: var(--gold); box-shadow: 0 10px 40px rgba(10,22,40,0.06); transform: translateY(-3px); }
+.logo-card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: var(--navy); letter-spacing: 0.05em; }
+.logo-card-type { font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); font-weight: 600; }
+.logo-card-desc { font-size: 0.75rem; color: var(--text-mid); font-weight: 300; margin-top: 0.25rem; }
+.partners-past { font-size: 0.9rem; color: var(--text-mid); font-weight: 300; line-height: 1.7; max-width: 700px; margin: 0 auto 2rem; }
+.partners-links { text-align: center; margin-top: 1rem; }
+.partners-links-title { font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-bottom: 0.75rem; }
+.partners-links a {
+  display: block; color: var(--gold); text-decoration: none;
+  font-size: 0.85rem; font-weight: 400; margin-bottom: 0.4rem; transition: color 0.3s;
+}
+.partners-links a:hover { color: var(--gold-light); }
+
+/* VALUE */
+.value { background: var(--navy); padding: 8rem 3rem; position: relative; overflow: hidden; }
+.value::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 100%, rgba(201,168,76,0.05) 0%, transparent 60%); }
+.value-inner { max-width: 1200px; margin: 0 auto; position: relative; }
+.value h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem,4vw,3.2rem); font-weight: 400; color: var(--white); margin-bottom: 4rem;
+}
+.value h2 em { font-style: italic; color: var(--gold-light); }
+.compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.compare-card {
+  padding: 3rem; border: 1px solid rgba(201,168,76,0.1);
+  background: rgba(255,255,255,0.02); text-align: center; transition: all 0.4s;
+}
+.compare-card.highlight { border-color: var(--gold); background: rgba(201,168,76,0.05); }
+.compare-card:hover { transform: translateY(-3px); }
+.compare-label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 2rem; font-weight: 600; }
+.compare-card:not(.highlight) .compare-label { color: rgba(255,255,255,0.45); }
+.compare-card.highlight .compare-label { color: var(--gold); }
+.compare-desc { font-size: 0.85rem; color: rgba(255,255,255,0.4); font-weight: 300; margin-bottom: 1.5rem; }
+.compare-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem; font-weight: 600; margin-bottom: 1.5rem; line-height: 1.1;
+}
+.compare-card:not(.highlight) .compare-price { color: rgba(255,255,255,0.4); }
+.compare-card.highlight .compare-price { color: var(--gold); }
+.compare-detail { font-size: 0.85rem; color: rgba(255,255,255,0.5); font-weight: 300; line-height: 1.9; }
+.compare-card.highlight .compare-detail { color: rgba(255,255,255,0.55); }
+
+/* PRICING */
+.pricing { padding: 8rem 3rem; max-width: 1200px; margin: 0 auto; }
+.pricing h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem,4vw,3.2rem); font-weight: 400; color: var(--navy); margin-bottom: 3rem;
+}
+.pricing h2 em { font-style: italic; color: var(--gold); }
+.pricing-list { list-style: none; max-width: 700px; }
+.pricing-list li {
+  display: flex; align-items: flex-start; gap: 1.2rem;
+  padding: 1.2rem 0; border-bottom: 1px solid rgba(201,168,76,0.12);
+  font-size: 0.95rem; color: var(--text-mid); font-weight: 300; line-height: 1.6;
+}
+.pricing-list li:last-child { border-bottom: none; font-weight: 500; font-style: italic; color: var(--navy); }
+.pricing-list li::before {
+  content: ''; width: 6px; height: 6px; min-width: 6px;
+  background: var(--gold); border-radius: 50%; margin-top: 0.55rem;
+}
+
+/* AVAILABILITY */
+.avail { background: var(--navy); padding: 8rem 3rem; position: relative; overflow: hidden; }
+.avail::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 30% 50%, rgba(201,168,76,0.06) 0%, transparent 50%); }
+.avail-inner { max-width: 1200px; margin: 0 auto; position: relative; }
+.avail h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem,4vw,3.2rem); font-weight: 400; color: var(--white); margin-bottom: 4rem;
+}
+.avail h2 em { font-style: italic; color: var(--gold-light); }
+.avail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; }
+.avail-card {
+  border: 1px solid rgba(201,168,76,0.15); background: rgba(255,255,255,0.02);
+  text-align: center; padding: 3rem 2rem; position: relative; overflow: hidden; transition: all 0.4s;
+}
+.avail-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); }
+.avail-card:hover { border-color: rgba(201,168,76,0.3); transform: translateY(-3px); }
+.avail-season { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--white); margin-bottom: 0.3rem; }
+.avail-show { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: rgba(255,255,255,0.4); font-style: italic; font-weight: 300; margin-bottom: 1.5rem; }
+.avail-num { font-family: 'Cormorant Garamond', serif; font-size: 6rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 0.25rem; }
+.avail-spots { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.55); font-weight: 500; margin-bottom: 1.5rem; }
+.avail-date { font-size: 0.85rem; font-weight: 600; color: var(--gold-light); letter-spacing: 0.1em; }
+.avail-footer { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; font-weight: 300; color: rgba(255,255,255,0.6); text-align: center; }
+
+/* CONTACT */
+.contact { padding: 8rem 3rem; text-align: center; position: relative; overflow: hidden; }
+.contact::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.05) 0%, transparent 60%); }
+.contact-inner { max-width: 700px; margin: 0 auto; position: relative; }
+.contact .section-label { justify-content: center; }
+.contact .section-label::before { display: none; }
+.contact h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem,5vw,3.5rem); font-weight: 400; color: var(--navy); margin-bottom: 1.5rem; line-height: 1.15;
+}
+.contact h2 em { font-style: italic; color: var(--gold); }
+.contact-p { font-size: 0.95rem; color: var(--text-mid); font-weight: 300; line-height: 1.7; margin-bottom: 3rem; }
+.contact-btn {
+  display: inline-flex; align-items: center; gap: 1rem;
+  padding: 1.2rem 3rem; background: var(--navy); color: var(--gold); text-decoration: none;
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase;
+  border: 1px solid var(--navy); transition: all 0.4s; margin-bottom: 3rem;
+}
+.contact-btn:hover { background: transparent; color: var(--navy); border-color: var(--gold); }
+.contact-details { display: flex; justify-content: center; gap: 4rem; margin-top: 2rem; }
+.contact-detail-label { font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-light); font-weight: 600; margin-bottom: 0.5rem; }
+.contact-detail-value { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--navy); }
+.contact-detail-value a { color: var(--navy); text-decoration: none; border-bottom: 1px solid rgba(201,168,76,0.3); transition: border-color 0.3s; }
+.contact-detail-value a:hover { border-color: var(--gold); }
+
+/* FOOTER */
+.footer { background: var(--navy); padding: 3rem; text-align: center; border-top: 1px solid rgba(201,168,76,0.1); }
+.footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.5rem; }
+.footer-company { font-size: 0.75rem; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+.footer p { font-size: 0.65rem; color: rgba(255,255,255,0.35); letter-spacing: 0.1em; }
+
+@media (max-width: 1024px) {
+  .demo-grid { grid-template-columns: repeat(2,1fr); }
+  .benefits-grid { grid-template-columns: repeat(2,1fr); }
+  .reach-grid { grid-template-columns: 1fr; }
+  .compare-grid { grid-template-columns: 1fr; }
+  .avail-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+}
+@media (max-width: 768px) {
+  .nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .demo-grid { grid-template-columns: 1fr 1fr; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .contact-details { flex-direction: column; gap: 2rem; }
+  section, .about, .reach, .pricing, .partners { padding: 5rem 1.5rem !important; }
+}
+@media (max-width: 480px) {
+  .demo-grid { grid-template-columns: 1fr; }
+  .about-stats { grid-template-columns: 1fr; text-align: center; }
+}
+@media print {
+  .nav, .hero-scroll, .hero-compass, .hero-cross, .hero-pattern { display: none !important; }
+  .hero { min-height: auto; height: auto; padding: 4rem 2rem; }
+  .rv { opacity: 1 !important; transform: none !important; }
+  section, .about, .reach, .pricing, .partners { padding: 3rem 2rem !important; }
+  .hero-pre, .hero-title, .hero-sub, .hero-cta { opacity: 1 !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-logo">T&thinsp;&&thinsp;T</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#audience">Audience</a></li>
+    <li><a href="#reach">Reach</a></li>
+    <li><a href="#opportunity">Opportunity</a></li>
+    <li><a href="#partners">Partners</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-compass"></div>
+  <div class="hero-cross"></div>
+  <div class="hero-content">
+    <p class="hero-pre">Media Kit &mdash; 2026 Season</p>
+    <h1 class="hero-title">Travels <span class="hero-amp">&</span> <em>Traditions</em></h1>
+    <p class="hero-sub">National PBS Television</p>
+    <a href="#contact" class="hero-cta">
+      Partner With Us
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="hero-scroll"><span>Scroll</span><div class="hero-scroll-line"></div></div>
+</section>
+
+<section class="about" id="about">
+  <div class="section-label rv">About the Show</div>
+  <h2 class="rv d1">America's #1 <em>PBS Travel Series</em></h2>
+  <p class="rv d2">The #1 Nielsen-rated travel series on Public Television, Travels &amp; Traditions has been on air for over 20 years. With a 0.33 national rating, 12 programs currently airing across the country, and programs that rerun for a minimum of 4 years, the show delivers unmatched longevity and reach on public television. Available on PBS.org for on-demand streaming.</p>
+  <div class="about-stats rv d3">
+    <div><div class="about-stat-num">20+</div><div class="about-stat-label">Years On Air</div></div>
+    <div><div class="about-stat-num">12</div><div class="about-stat-label">Programs Airing</div></div>
+    <div><div class="about-stat-num">#1</div><div class="about-stat-label">Nielsen PBS Travel</div></div>
+  </div>
+</section>
+
+<div class="section-divider"><div class="section-divider-line"></div><div class="section-divider-diamond"></div><div class="section-divider-line"></div></div>
+
+<section class="audience" id="audience">
+  <div class="audience-inner">
+    <div class="section-label rv">Audience Profile</div>
+    <h2 class="rv d1">The Right <em>Viewers</em></h2>
+    <p class="audience-sub rv d2">Adults 50+ &mdash; the highest-spending segment of the American travel market.</p>
+    <div class="demo-grid">
+      <div class="demo-card rv"><div class="demo-card-num">50+</div><div class="demo-card-label">Core Demographic Age</div></div>
+      <div class="demo-card rv d1"><div class="demo-card-num">66%</div><div class="demo-card-label">More Likely $2M+ Net Worth</div></div>
+      <div class="demo-card rv d2"><div class="demo-card-num">78%</div><div class="demo-card-label">More Likely to Act on PBS</div></div>
+      <div class="demo-card rv d3"><div class="demo-card-num">#1</div><div class="demo-card-label">Most Trusted Institution</div></div>
+    </div>
+    <div class="audience-note rv d4">PBS viewers are 66% more likely to have household net worth exceeding $2M, and 78% more likely to act on what they see on PBS versus commercial television. PBS is consistently ranked the most trusted institution in America.</div>
+  </div>
+</section>
+
+<section class="reach" id="reach">
+  <div class="section-label rv">National Scale</div>
+  <h2 class="rv d1">Coast to Coast <em>Coverage</em></h2>
+  <p class="reach-sub rv d2">Your message reaches virtually every American household through the PBS network.</p>
+  <div class="reach-grid">
+    <div class="reach-card rv">
+      <div class="reach-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+      <h3>Broadcast Network</h3>
+      <p>Airing on 300+ PBS stations across 168 U.S. markets in 48 states, reaching 95% of U.S. households.</p>
+      <div class="reach-card-stat">95% <span>Household Coverage</span></div>
+    </div>
+    <div class="reach-card rv d1">
+      <div class="reach-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12C2 12 5 4 12 4s10 8 10 8-3 8-10 8S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+      <h3>Monthly Airings</h3>
+      <p>Your 15-second spot airs at the open and close of every episode, over 900 times per month across all markets.</p>
+      <div class="reach-card-stat">900+ <span>Airings Per Month</span></div>
+    </div>
+    <div class="reach-card rv d2">
+      <div class="reach-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
+      <h3>Verified Reach</h3>
+      <p>In 2025, our 12 programs aired 5,538 times across 306 stations, generating 11,076 verified spot plays.</p>
+      <div class="reach-card-stat">11,076 <span>Spot Plays in 2025</span></div>
+    </div>
+    <div class="reach-card rv d3">
+      <div class="reach-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <h3>Brand Safety</h3>
+      <p>PBS: the most brand-safe environment on American television. No competing brand on the show &mdash; category exclusivity included.</p>
+      <div class="reach-card-stat">100% <span>Brand Safe</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"><div class="section-divider-line"></div><div class="section-divider-diamond"></div><div class="section-divider-line"></div></div>
+
+<section class="opportunity" id="opportunity">
+  <div class="opportunity-inner">
+    <div class="section-label rv">The Opportunity</div>
+    <h2 class="rv d1">Your 15-Second <em>National TV Spot</em></h2>
+    <div class="quote-box rv d2">
+      <p>&ldquo;Support for Travels &amp; Traditions comes from [Your Brand]. [One sentence about your company]. Learn more at [your website].&rdquo;</p>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card rv"><div class="benefit-num">01</div><h3>Open &amp; Close Placement</h3><p>Your spot airs at the beginning and end of every episode &mdash; premium positioning that bookends the entire viewing experience.</p></div>
+      <div class="benefit-card rv d1"><div class="benefit-num">02</div><h3>Category Exclusivity</h3><p>No competing brand appears on the show. Your category is yours alone across all programs and all markets.</p></div>
+      <div class="benefit-card rv d2"><div class="benefit-num">03</div><h3>Production Included</h3><p>Your 15-second spot is professionally produced at no extra cost. We handle everything &mdash; scripting, recording, and delivery to all 300+ stations.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="partners" id="partners">
+  <div class="section-label rv">Our Partners</div>
+  <h2 class="rv d1">Trusted by <em>Leading Brands</em></h2>
+  <div class="logos-grid rv d2">
+    <div class="logo-card"><span class="logo-card-name">Swiss International Airlines</span><span class="logo-card-type">Aviation</span><span class="logo-card-desc">Advertising partner for over 10 years</span></div>
+    <div class="logo-card"><span class="logo-card-name">Goldbelly</span><span class="logo-card-type">Food &amp; Delivery</span><span class="logo-card-desc">Joined last season</span></div>
+  </div>
+  <p class="partners-past rv d3">Past program partners include John Deere, Ray Dalio, Discover The Palm Beaches, Four Seasons, Neil Young, and Oura Ring.</p>
+  <div class="partners-links rv d4">
+    <div class="partners-links-title">See the ad spot format in action:</div>
+    <a href="https://www.pbs.org/video/the-history-and-future-of-farming-lnyenk/" target="_blank">John Deere Episode &mdash; Watch the first 15 seconds &rarr;</a>
+    <a href="https://www.pbs.org/video/dealing-with-the-changing-world-vtt0f1/" target="_blank">Ray Dalio Episode &mdash; Watch the first 15 seconds &rarr;</a>
+  </div>
+</section>
+
+<div class="section-divider"><div class="section-divider-line"></div><div class="section-divider-diamond"></div><div class="section-divider-line"></div></div>
+
+<section class="value">
+  <div class="value-inner">
+    <div class="section-label rv">The Value</div>
+    <h2 class="rv d1">National TV, Fraction of the <em>Cost</em></h2>
+    <div class="compare-grid">
+      <div class="compare-card rv"><div class="compare-label">Traditional Cable</div><div class="compare-desc">Single 30-second spot</div><div class="compare-price">$5,000 &mdash; $50,000</div><div class="compare-detail">Airs once.</div></div>
+      <div class="compare-card highlight rv d1"><div class="compare-label">Travels &amp; Traditions</div><div class="compare-desc">15-second spot</div><div class="compare-price">$4,000/month</div><div class="compare-detail">900+ airings per month<br>168 U.S. markets<br>4-year broadcast life</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="section-label rv">Investment</div>
+  <h2 class="rv d1">$4,000 per month. <em>That's it.</em></h2>
+  <ul class="pricing-list">
+    <li class="rv d1">Month-to-month. No upfront payment. No long-term contract.</li>
+    <li class="rv d2">Cancel at end of any billing period with 30 days written notice.</li>
+    <li class="rv d2">Category exclusivity included.</li>
+    <li class="rv d3">Production of your 15-second spot included at no extra cost.</li>
+    <li class="rv d3">Monthly TRAC Media verified airing reports (station, market, date, time).</li>
+    <li class="rv d4">Try it for one month.</li>
+  </ul>
+</section>
+
+<div class="section-divider"><div class="section-divider-line"></div><div class="section-divider-diamond"></div><div class="section-divider-line"></div></div>
+
+<section class="avail">
+  <div class="avail-inner">
+    <div class="section-label rv">Limited Inventory</div>
+    <h2 class="rv d1">Only 8 Spots <em>Available</em></h2>
+    <div class="avail-grid">
+      <div class="avail-card rv"><div class="avail-season">Season 23</div><div class="avail-show">Travels &amp; Traditions: Florida</div><div class="avail-num">4</div><div class="avail-spots">Spots Available</div><div class="avail-date">June 2026</div></div>
+      <div class="avail-card rv d1"><div class="avail-season">Season 24</div><div class="avail-show">New Production</div><div class="avail-num">4</div><div class="avail-spots">Spots Available</div><div class="avail-date">January 2027</div></div>
+    </div>
+    <div class="avail-footer rv d2">8 total spots across two seasons. When they're filled, they're gone.</div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="section-label rv">Get in Touch</div>
+    <h2 class="rv d1">Let's <em>Talk</em></h2>
+    <p class="contact-p rv d2">We'd love to discuss how a Travels &amp; Traditions ad spot can put your brand in front of millions of affluent American households.</p>
+    <a href="mailto:nwolf@nicholaswolf.com" class="contact-btn rv d3">
+      Contact Nicholas
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <div class="contact-details rv d4">
+      <div><div class="contact-detail-label">Email</div><div class="contact-detail-value"><a href="mailto:nwolf@nicholaswolf.com">nwolf@nicholaswolf.com</a></div></div>
+      <div><div class="contact-detail-label">Phone</div><div class="contact-detail-value"><a href="tel:+15619723613">561-972-3613</a></div></div>
+      <div><div class="contact-detail-label">Location</div><div class="contact-detail-value">Jupiter, Florida</div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-logo">Travels <span style="font-style:italic;font-weight:300;">&</span> Traditions</div>
+  <div class="footer-company">Iron Productions LLC &nbsp;|&nbsp; Burt &amp; Nicholas Wolf</div>
+  <p>&copy; 2026 Iron Productions LLC. All rights reserved. &nbsp;|&nbsp; Confidential &mdash; For prospective advertisers only.</p>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+window.addEventListener('scroll', () => { document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 80); });
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => { e.preventDefault(); const t = document.querySelector(a.getAttribute('href')); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+});
+</script>
+</body>
+</html>
